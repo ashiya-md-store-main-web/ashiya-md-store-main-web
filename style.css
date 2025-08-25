@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #0a0f1c;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Top Navbar */
+.navbar {
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #111827;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* h1 මැදට */
+  z-index: 1001;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  position: relative;
+}
+.navbar {
+      position: fixed; 
+}
+
+/* Menu button fixed left */
+.navbar .menu-btn {
+  position: absolute;
+  left: 20px;
+  background: none;
+  border: none;
+  color: #65ff00;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* navbar time */
+.navbar > #clock {
+  position: absolute;
+  right: 10px;
+  padding: 4px;
+  border: none;
+  border-radius: 5px;
+  background: #25C935;
+  box-shadow: 0 0 5px #65ff00;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+
+.navbar h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(to right, #65ff00, #9ca3af); /* color 2ක් */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Side menu */
+.side-menu {
+  position: fixed;
+  left: -250px; /* hidden by default */
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  padding-top: 60px; /* navbar height */
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  transition: left 0.3s;
+  z-index: 1000;
+}
+
+.side-menu a {
+  display: block;
+  color: white;
+  padding: 5px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.3s;
+  background: #2A991F;
+  border-radius: 20px;
+  box-shadow: 0 0 5px #65ff00;
+  width: 90%;
+}
+
+.side-menu a:hover {
+  color: red;
+  text-shadow: 0 0 5px red;
+  background: #00E4FF;
+  transition: .4s;
+}
+
+/* Open menu */
+.side-menu.open {
+  left: 0;
+}
+
+.side-menu > footer {
+  color: #409408;
+  margin-top: 100px;
+  font-weight: 700;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  z-index: 900;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Content */
+.content {
+  padding: 80px 20px 20px 20px; /* leave space for navbar */
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+
+.main-image {
+  background: #111827;
+  box-shadow: 0 0 10px #65ff00;
+  height: 280px;
+  width: 90%;
+  transform: translateX(20px);
+  border-radius: 18px;
+  text-align: center;
+  align-items: center;
+}
+
+.main-image > img {
+  width: 110px;
+  margin-top: 30px;
+  border-radius: 10px;
+  background: #111827;
+  box-shadow: 0 0 10px #111,
+             -0 -0 10px #000;
+  transition: .9s;
+}
+
+.main-image > img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 7px #65FF00;
+}
+
+.main-image > h3 {
+  margin-top: 40px;
+  margin-bottom: 14px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.main-image > p {
+  color: #aaa;
+  font-size: 15px;
+}
+
+.box {
+  margin-top: 40px;
+  background: #111827;
+  padding: 20px;
+  width: 100%;
+  height: 160px;
+  color : #444;
+  display: block;
+  border-radius: 9px;
+  box-shadow: 0 0 9px #65ff00;
+}
+
+.box > h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #65ff00;
+}
+
+.box > p {
+  font-size: 17px;
+  color: #ccc;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.box > span {
+  color: #fff;
+  font-weight: 800;
+  margin-top: 40px;
+}
+
+.box > a {
+  outline: none;
+  display: block;
+  margin-top: 20px;
+  color: #111111;
+  font-weight: 800;
+  width: 20%;
+  font-size: 11px;
+  background: #65ff00;
+  border-radius: 5px;
+  padding: 2px;
+  text-align: center;
+}
+
+/* footer --box ---*/
+.footer > footer {
+  text-align: center;
+  transform: translateY(-30px);
+  color: #aaa;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Tablet */
+    @media (max-width: 1023px) and (min-width: 600px) {
+      .content {
+        background: #0a0f1c;
+        font-size: 24px;
+      }
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+      .content {
+        background: #0a0f1c;
+        font-size: 32px;
+      }
+    }
